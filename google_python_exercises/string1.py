@@ -27,7 +27,8 @@ def donuts(count):
   if count < 10 then:
     test = (f'Number of donuts: {count}')
   else:
-  return
+    test = (f'Number of donuts: many')
+  return test
 
 
 # B. both_ends
