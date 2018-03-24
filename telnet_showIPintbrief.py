@@ -1,8 +1,9 @@
 #!/usr/bin/env python3.6
 '''
-Write a script that connects to a Cisco IOS device, logins in, and executes the
-'show ip int brief' command.
+Write a script that connects to a Cisco IOS device using telnet, 
+and executes the 'show ip int brief' command.
 '''
+from __future__ import print_function, unicode_literals
 import telnetlib
 import time
 import socket
@@ -58,7 +59,10 @@ class MyTelnetlib(object):
         Write a script that connects to the lab pynet-rtr1, logins, and executes the
         'show ip int brief' command.
         '''
-        ip_addr = input("IP address: ")
+        try:
+            ip_addr = raw_input("IP address: ")
+        except NameError:
+            ip_addr = input("IP address: ")
         ip_addr = ip_addr.strip()
         username = input("Username: ")
         password = getpass.getpass()

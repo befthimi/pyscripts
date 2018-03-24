@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python3.6 -tt
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -54,9 +54,10 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-  firstchar = [0]
-  s.replace(firstchar, '*')
-  return
+  firstchar = s[0]
+  restofchars = s[1:]
+  newstring = firstchar + restofchars.replace(firstchar, '*')
+  return newstring
 
 
 # D. MixUp
@@ -67,8 +68,10 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  # +++your code here+++
-  return
+  x = b[0:2] + a[2:]
+  y = a[0:2] + b[2:]
+  newstring = ' '.join([x, y])
+  return newstring
 
 
 # Provided simple test() function used in main() to print
@@ -78,8 +81,8 @@ def test(got, expected):
     prefix = ' OK '
   else:
     prefix = '  X '
-  print ('%s got: %s expected: %s') % (prefix, repr(got), repr(expected))
-
+  print ('{} got: {} expected: {}'.format(prefix, repr(got), repr(expected)))
+#  print ('%s got: %s expected: %s') % (prefix, repr(got), repr(expected))
 
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
