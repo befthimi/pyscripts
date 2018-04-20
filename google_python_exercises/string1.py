@@ -15,6 +15,7 @@
 # It's ok if you do not complete all the functions, and there
 # are some additional functions to try in string2.py.
 
+from __future__ import print_function
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
