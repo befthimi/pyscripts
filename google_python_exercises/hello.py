@@ -5,16 +5,16 @@ import sys
 
 # Gather our code in a main() function
 def main():
-    if len(sys.argv) > 3:
-        num_args = len(sys.argv) - 1
+    num_args = len(sys.argv) -1 
+    if num_args != 2:
         print num_args, ' arguements specified'
-        print 'Too many arguements specified. This may cause problems.'
+        print 'Less than or greater than 2 arguements may cause problems.'
         print '\n\n'
     try:
         print 'Hello there', sys.argv[1], sys.argv[2]
     except IndexError:
-        print '\n\n***Missed a variable***'
-        print '-' * 23
+        print '\n\n***Missed variable(s)***'
+
     # Command line args are in sys.argv[1], sys.argv[2] ...
     # sys.argv[0] is the script name itself and can be ignored
 
