@@ -1,5 +1,8 @@
 '''
 This script normalises the serial number for APs in the list such that it includes the training '00000'
+
+Modify the input file as required. The new normalised "output" file is called "normalisedList.csv"
+and is placed in the same directory from which this script is executed by default.
 '''
 #Initialise the new file to write the full seial number
 newfile = open("normalisedList.csv", "w")
@@ -18,7 +21,7 @@ def normaliseSerialNumber(NonNormalisedSerialNo):
         print("Normalised Serial Number: ", NormalisedSerialNo)
     return NormalisedSerialNo
 
-with open('Book1v3.csv') as f:
+with open('HS_outletList.csv') as f:
     for current_line in f:
         split_line = current_line.split(",")
         split_line[0] = normaliseSerialNumber(split_line[0])
